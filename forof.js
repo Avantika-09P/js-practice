@@ -36,7 +36,10 @@ const myObject = {
 }
 
 for (const [key, value] of Object.entries(myObject)) {
-    console.log(`Key: ${key}, Value: ${value}`);
+    // console.log(`Key: ${key}, Value: ${value}`);
     
 }
 
+for (const key in myObject) {
+    console.log(`${key} :- ${myObject[key]}`);
+}
