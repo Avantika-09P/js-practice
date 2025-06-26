@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM from Chai aur Code</title>
+</head>
+
+<body style="background-color: #212121; color:aliceblue ">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    <ul class="language">
+        <li>Python</li>
+        <li>Java</li>
+        <li>Javascript</li>
+
+    </ul>
+</body>
+<script>
+    const parent = document.querySelector(".parent");
+    console.log(parent);
+
+    console.log(parent.children);
+    console.log(parent.children[1].innerHTML);
+    console.log(parent.children[1].textContent);
+    console.log(parent.children[1].className);
+
+
+    console.log("\n\nDays");
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+
+    }
+
+    function addLanguage(langName) {   //here we need to traverse the whole DOM tree 
+        const li = document.createElement("li");
+        li.innerHTML = `${langName}`;
+        document.querySelector(".language").appendChild(li)
+    }
+    addLanguage("TypeScript");
+    addLanguage("C");
+
+    function addLanguageOptimised(languageName) { //optimised method to avoid traversing the whole DOM tree and it's time efficient too
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(languageName));
+        document.querySelector(".language").appendChild(li);
+    }
+    addLanguageOptimised("Golang");
+
+
+    //Edit Element:
+    const secondElementofLanguageFunction = document.querySelector("li:nth-child(2)");
+    // secondElementofLanguageFunction.innerHTML = "Mojo";
+    const newSecondElement = document.createElement("li");
+    newSecondElement.textContent = "Mojo";
+    secondElementofLanguageFunction.replaceWith(newSecondElement);
+
+    //Edit example2:
+    const thirdElementEdit = document.querySelector("li:nth-child(3)");
+    const newThirdElement = document.createElement("li");
+    newThirdElement.textContent = "Angular";
+    thirdElementEdit.replaceWith(newThirdElement); 
+
+    //Remove Element:
+    const removeThirdElement = document.querySelector("li:last-child");
+    removeThirdElement.remove();
+
+    //Edit Another method:
+    const lastElementEdit = document.querySelector("li:last-child");
+    lastElementEdit.outerHTML = "<li>JavaScript</li>";
+
+</script>
+
+</html>
