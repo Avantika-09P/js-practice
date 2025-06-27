@@ -1,14 +1,25 @@
-.title {
-    padding: 20px;
-    margin-left: 500px;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    font-size: larger;
-    font-weight: bolder;
-    color: black;
+body {
+  background-color: gray;
+  text-align: center; /* centers the heading */
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column; /* stacks children vertically */
+  align-items: center;    /* horizontally center inputs */
+  gap: 20px;              /* space between fields */
+  margin-top: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* label above input */
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  margin-top: 5px;
+  width: 250px;
 }
