@@ -1,7 +1,31 @@
+.button{
+    display: inline-block;
+    /* color: antiquewhite; */
+    padding: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin: 80px;
+    cursor: pointer;
+    border: 3px solid black;
+    
+}
+
+#orange{
+    background-color: #cf6e13;
+}
+#purple{
+    background-color: rgb(189, 23, 189);
+}
+#yellow{
+    background-color: rgb(221, 221, 6);
+}
+#pink{
+    background-color: rgb(233, 138, 154);
+}
 
 
-
-.button {
+/* .button {
   display: inline-block;
   width: 50px;
   height: 50px;
@@ -12,4 +36,4 @@
 #orange { background-color: orange; }
 #purple { background-color: purple; }
 #yellow { background-color: yellow; }
-#pink   { background-color: pink; }
+#pink   { background-color: pink; } */
